@@ -17,18 +17,21 @@
             android:id="@+id/bu1"
             android:layout_width="40pt"
             android:layout_height="40pt"
-            android:layout_marginRight="5pt" />
+            android:layout_marginRight="5pt"
+            android:onClick="buClickEvent" />
 
         <Button
             android:id="@+id/bu2"
             android:layout_width="40pt"
             android:layout_height="40pt"
-            android:layout_marginRight="5pt"/>
+            android:layout_marginRight="5pt"
+            android:onClick="buClickEvent" />
 
         <Button
             android:id="@+id/bu3"
             android:layout_width="40pt"
-            android:layout_height="40pt" />
+            android:layout_height="40pt"
+            android:onClick="buClickEvent" />
     </TableRow>
 
     <TableRow
@@ -42,19 +45,20 @@
             android:layout_width="40pt"
             android:layout_height="40pt"
             android:layout_marginRight="5pt"
-            />
+            android:onClick="buClickEvent" />
 
         <Button
             android:id="@+id/bu5"
             android:layout_width="40pt"
             android:layout_height="40pt"
             android:layout_marginRight="5pt"
-            />
+            android:onClick="buClickEvent" />
 
         <Button
             android:id="@+id/bu6"
             android:layout_width="40pt"
-            android:layout_height="40pt" />
+            android:layout_height="40pt"
+            android:onClick="buClickEvent" />
     </TableRow>
 
     <TableRow
@@ -68,19 +72,19 @@
             android:layout_width="40pt"
             android:layout_height="40pt"
             android:layout_marginRight="5pt"
-            />
+            android:onClick="buClickEvent" />
 
         <Button
             android:id="@+id/bu8"
             android:layout_width="40pt"
             android:layout_height="40pt"
             android:layout_marginRight="5pt"
-            />
+            android:onClick="buClickEvent" />
 
         <Button
             android:id="@+id/bu9"
             android:layout_width="40pt"
             android:layout_height="40pt"
-            />
+            android:onClick="buClickEvent" />
     </TableRow>
 </TableLayout>
