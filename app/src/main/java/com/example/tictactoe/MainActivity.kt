@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,18 +35,21 @@ class MainActivity : AppCompatActivity() {
         playGames(cellId,selectedButton)
         checkWinner()
     }
+
     var player1 = ArrayList<Int>()
     var player2 = ArrayList<Int>()
     var activePlayer = 1
+
     private fun playGames(cellId: Int, selectedButton: Button) {
         if(activePlayer == 1){
             selectedButton.text = "X"
-            selectedButton.setBackgroundColor(Color.RED)
+            selectedButton.setBackgroundResource(R.color.red)
             player1.add(cellId)
             activePlayer = 2
+            AutoPlay()
         }else{
             selectedButton.text = "O"
-            selectedButton.setBackgroundColor(Color.BLUE)
+            selectedButton.setBackgroundResource(R.color.blue)
             player2.add(cellId)
             activePlayer = 1
         }
@@ -111,5 +117,34 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+    fun AutoPlay(){
+        var emptyCell = ArrayList<Int>()
 
+        for (cellId in 1..9){
+            if(!(player1.contains(cellId) || player2.contains(cellId))){
+                emptyCell.add(cellId)
+            }
+        }
+
+        val random = Random()
+        val randomIndex = random.nextInt(emptyCell.size - 0) + 0
+        val cellId = emptyCell.get(randomIndex)
+
+        var selectedButton:Button?
+        when(cellId){
+            1 -> selectedButton = bu1
+            2 -> selectedButton = bu2
+            3 -> selectedButton = bu3
+            4 -> selectedButton = bu4
+            5 -> selectedButton = bu5
+            6 -> selectedButton = bu6
+            7 -> selectedButton = bu7
+            8 -> selectedButton = bu8
+            9 -> selectedButton = bu9
+            else -> {selectedButton = bu1}
+        }
+
+        playGames(cellId,selectedButton)
+
+    }
 }
